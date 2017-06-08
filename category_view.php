@@ -81,7 +81,6 @@ if($foundRecord)
 	<div align="center"><a href="<?=VIRTUAL_PATH;?>p3/category_list.php">More Feeds?!?</a></div>
 	<table align="center">
 		<tr>
-			<td><img src="<?=VIRTUAL_PATH;?>upload/m<?=$myID;?>.jpg" /></td>
 			<td>We view fresh <?=$Title;?> feeds daily!</td>
 		</tr>
 		<tr>
@@ -91,9 +90,10 @@ if($foundRecord)
 		</tr>
 		<tr>
 			<td align="center" colspan="2">
-                <div id="rssOutput">RSS-feed will be listed here...</div>
-				<blockquote><?=$Link;?></blockquote>
+               
+				<blockquote>
                 <?php getFeed($Link); ?>
+                    </blockquote>
 			</td>
 		</tr>
 	</table>
