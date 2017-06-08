@@ -22,7 +22,7 @@ if(isset($_GET['id']) && (int)$_GET['id'] > 0){#proper data must be on querystri
 }
 
 //sql statement to select individual item
-$sql = "select Link, CategoryID,Title,Description from feed_category_travel where CategoryID =" . $myID;
+$sql = "select DateAdded,Link, CategoryID,Title,Description from feed_category_travel where CategoryID =" . $myID;
 //---end config area --------------------------------------------------
 
 $foundRecord = FALSE; # Will change to true, if record found!
@@ -37,7 +37,8 @@ if(mysqli_num_rows($result) > 0)
 	   {
 			$Title = dbOut($row['Title']);
 			$Description = dbOut($row['Description']);
-			$Link = (float)$row['Link'];
+			$Link = dbOut($row['Link']);
+            $DateAdded = DATE('DateAdded');
 	   }
 }
 
