@@ -15,7 +15,6 @@
 require '../inc_0700/config_inc.php'; #provides configuration, pathing, error handling, db credentials 
  
 # SQL statement
-//$sql = "SELECT CategoryID, Title FROM feed_category_travel t JOIN feed_category_music m ON t.CategoryID = m.CategoryID JOIN feed_category_sea_creatures s ON t.CategoryID = s.CategoryID";
 $sql = "SELECT t.CategoryID, t.Title, m.CategoryID, m.Title, s.CategoryID, s.Title FROM feed_category_travel t LEFT JOIN feed_category_music m ON t.CategoryID = m.CategoryID LEFT JOIN feed_category_sea_creatures s ON t.CategoryID = s.CategoryID";
 
 
@@ -58,7 +57,7 @@ if(mysqli_num_rows($result) > 0)
 {#records exist - process
 	while($row = mysqli_fetch_assoc($result))
 	{# process each row
-         echo '<div align="center"><a href="' . VIRTUAL_PATH . 'p3/feed_list.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Title']) . '</a>';
+         echo '<div align="center"><a href="' . VIRTUAL_PATH . 'p3/category_view.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Title']) . '</a>';
          echo '</div>';
  
 	} 

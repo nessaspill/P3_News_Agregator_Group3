@@ -66,8 +66,11 @@ $config->nav1 = array("page.php"=>"New Page!") + $config->nav1; #add a new page 
 # END CONFIG AREA ---------------------------------------------------------- 
 
 get_header(); #defaults to theme header or header_inc.php
+
+include'include/getfeed.php';
 ?>
 <h3 align="center"><?=smartTitle();?></h3>
+
 
 
 <?php
@@ -90,6 +93,7 @@ if($foundRecord)
 			<td align="center" colspan="2">
                 <div id="rssOutput">RSS-feed will be listed here...</div>
 				<blockquote><?=$Link;?></blockquote>
+                <?php getFeed($Link); ?>
 			</td>
 		</tr>
 	</table>
