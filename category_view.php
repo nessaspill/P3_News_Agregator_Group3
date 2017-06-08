@@ -69,20 +69,17 @@ get_header(); #defaults to theme header or header_inc.php
 ?>
 <h3 align="center"><?=smartTitle();?></h3>
 
-<p>This page, along with <b>demo_list.php</b>, demonstrate a List/View web application.</p>
-<p>It was built on the mysqli shared web application page, <b>demo_shared.php</b></p>
-<p>This page is to be used only with <b>demo_list.php</b>, and is <b>NOT</b> the entry point of the application, meaning this page gets <b>NO</b> link on your web site.</p>
-<p>Use <b>demo_list.php</b> and <b>demo_view.php</b> as a starting point for building your own List/View web application!</p> 
+
 <?php
 if($foundRecord)
 {#records exist - show muffin!
 ?>
-	<h3 align="center">A Yummy <?=$Title;?> Muffin!</h3>
-	<div align="center"><a href="<?=VIRTUAL_PATH;?>p3/category_list.php">More Muffins?!?</a></div>
+	<h3 align="center">Check Out The <?=$Title;?> Feed!</h3>
+	<div align="center"><a href="<?=VIRTUAL_PATH;?>p3/category_list.php">More Feeds?!?</a></div>
 	<table align="center">
 		<tr>
 			<td><img src="<?=VIRTUAL_PATH;?>upload/m<?=$myID;?>.jpg" /></td>
-			<td>We make fresh <?=$Title;?> muffins daily!</td>
+			<td>We view fresh <?=$Title;?> feeds daily!</td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -91,6 +88,7 @@ if($foundRecord)
 		</tr>
 		<tr>
 			<td align="center" colspan="2">
+                <div id="rssOutput">RSS-feed will be listed here...</div>
 				<blockquote><?=$Link;?></blockquote>
 			</td>
 		</tr>
