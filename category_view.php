@@ -67,7 +67,7 @@ $config->nav1 = array("page.php"=>"New Page!") + $config->nav1; #add a new page 
 
 get_header(); #defaults to theme header or header_inc.php
 
-include'include/getfeed.php';
+include'getfeed.php';
 ?>
 <h3 align="center"><?=smartTitle();?></h3>
 
