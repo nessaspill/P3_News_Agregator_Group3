@@ -22,7 +22,7 @@ if(isset($_GET['id']) && (int)$_GET['id'] > 0){#proper data must be on querystri
 }
 
 //sql statement to select individual item
-$sql = "select DateAdded,Link, CategoryID,Title,Description from feed_category_travel where CategoryID =" . $myID;
+$sql = "select DateAdded,Link, CategoryID,Title,Description from feed_categories where CategoryID =" . $myID;
 //---end config area --------------------------------------------------
 
 $foundRecord = FALSE; # Will change to true, if record found!
@@ -85,14 +85,19 @@ if($foundRecord)
 		</tr>
 		<tr>
 			<td colspan="2">
+                <div id="accordion">
 				<blockquote><?=$Description;?></blockquote>
+                </div>
 			</td>
 		</tr>
 		<tr>
 			<td align="center" colspan="2">
                
 				<blockquote>
+                    
+                    <div id="accordion">
                 <?php getFeed($Link); ?>
+                    </div>
                     </blockquote>
 			</td>
 		</tr>

@@ -15,7 +15,7 @@
 require '../inc_0700/config_inc.php'; #provides configuration, pathing, error handling, db credentials 
  
 # SQL statement
-$sql = "SELECT t.CategoryID, t.Title, m.CategoryID, m.Title, s.CategoryID, s.Title FROM feed_category_travel t LEFT JOIN feed_category_music m ON t.CategoryID = m.CategoryID LEFT JOIN feed_category_sea_creatures s ON t.CategoryID = s.CategoryID";
+$sql = "SELECT c.CategoryID, c.Feed_ID, f.Feed_ID, c.Title FROM feed_categories c LEFT JOIN feed_feeds f ON f.Feed_ID = c.Feed_ID";
 
 
 
