@@ -58,9 +58,28 @@ if(mysqli_num_rows($result) > 0)
 {#records exist - process
 	while($row = mysqli_fetch_assoc($result))
 	{# process each row
-         echo '<div align="center"><a href="' . VIRTUAL_PATH . 'p3/category_view.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Title']) . '</a>';
+        switch((int)$row['Feed_ID']){ 
+            case 1:
+                echo'<div class="panel panel-success"                       style="width:50%;">';
+                echo '<div class="panel-heading">';
+                break;
+            case 2:
+                echo'<div class="panel panel-info"                          style="width:50%;">';
+                echo '<div class="panel-heading">';
+                break;
+            case 3:
+                echo'<div class="panel panel-warning"                       style="width:50%;">';
+                echo '<div class="panel-heading">';
+                break;
+            default:
+                echo'<div>';
+                break;
+        }
+        echo '<div align="center"><a style="color:                      #ffffff; text-shadow: 1px 1px 1px #000;"                  href="' . VIRTUAL_PATH .                                  'p3/category_view.php?id=' .                              (int)$row['CategoryID'] . '">' .                          dbOut($row['Title']) . '</a>';
+         echo '</div>';#close panel heading
+         echo '</div>';#close panel 
          echo '</div>';
- 
+        
 	} 
 }else{#no records
     echo "<div align=center>What! No feeds?  There must be a mistake!!</div>";	
