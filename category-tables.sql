@@ -40,7 +40,7 @@ FOREIGN KEY (FeedID) REFERENCES feed_categories(FeedID) ON DELETE CASCADE
 
 INSERT INTO feed_categories VALUES (NULL,1,'Music-Indie','Music from Indie artists','https://news.google.com/news?q=music_indie&output=rss', NOW());
 INSERT INTO feed_categories VALUES (NULL,1,'Music-EDM','Music from electronic dance artists','https://news.google.com/news?q=music_edm&output=rss', NOW());
-INSERT INTO feed_categories VALUES (NULL,1,'Music-Hip-Hop','Music from Hip-Hop artists','https://news.google.com/news?q=music_hip-hop&output=rss', NOW());
+INSERT INTO feed_categories VALUES (NULL,1,'Music-Hip-Hop','Music from Hip-Hop artists','https://news.google.com/news?q=music_hip_hop&output=rss', NOW());
 
 INSERT INTO feed_categories VALUES (NULL,2,'Travel-Air','Plane, Blimp/Zeppelin, Hot air balloon','https://news.google.com/news?q=travel_air&output=rss', NOW());  
 INSERT INTO feed_categories VALUES (NULL,2,'Travel-Sea','Curise ship, Yacht, Boat','https://news.google.com/news?q=travel_sea&output=rss', NOW()); 
